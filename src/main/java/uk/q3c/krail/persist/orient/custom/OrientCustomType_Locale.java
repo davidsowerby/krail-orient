@@ -10,22 +10,22 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package uk.co.q3c.v7.persist.orient.custom;
-
-import java.util.Locale;
+package uk.q3c.krail.persist.orient.custom;
 
 import com.orientechnologies.orient.core.serialization.serializer.object.OObjectSerializer;
 
+import java.util.Locale;
+
 public class OrientCustomType_Locale implements OObjectSerializer<Locale, String> {
 
-	@Override
-	public Locale unserializeFieldValue(Class<?> iClass, String iFieldValue) {
-		return new Locale(iFieldValue);
-	}
+    @Override
+    public Locale unserializeFieldValue(Class<?> iClass, String iFieldValue) {
+        return new Locale(iFieldValue);
+    }
 
-	@Override
-	public String serializeFieldValue(Class<?> iClass, Locale iFieldValue) {
-		return iFieldValue.toString();
-	}
+    @Override
+    public String serializeFieldValue(Class<?> iClass, Locale iFieldValue) {
+        return iFieldValue.toString();
+    }
 
 }

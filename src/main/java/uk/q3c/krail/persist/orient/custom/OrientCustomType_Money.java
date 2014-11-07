@@ -10,22 +10,21 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package uk.co.q3c.v7.persist.orient.custom;
-
-import org.joda.money.Money;
+package uk.q3c.krail.persist.orient.custom;
 
 import com.orientechnologies.orient.core.serialization.serializer.object.OObjectSerializer;
+import org.joda.money.Money;
 
 public class OrientCustomType_Money implements OObjectSerializer<Money, String> {
 
-	@Override
-	public String serializeFieldValue(Class<?> iClass, Money iFieldValue) {
-		return iFieldValue.toString();
-	}
+    @Override
+    public String serializeFieldValue(Class<?> iClass, Money iFieldValue) {
+        return iFieldValue.toString();
+    }
 
-	@Override
-	public Money unserializeFieldValue(Class<?> iClass, String iFieldValue) {
-		return Money.parse(iFieldValue);
-	}
+    @Override
+    public Money unserializeFieldValue(Class<?> iClass, String iFieldValue) {
+        return Money.parse(iFieldValue);
+    }
 
 }
